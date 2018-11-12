@@ -190,6 +190,16 @@ public class Sudoku extends LatinSquare implements Serializable {
 	 * @param iRow - given row
 	 * @return
 	 */
+	private static int PossibleValuesMultiplier(java.util.HashMap<java.lang.Integer,Sudoku.SudokuCell> cells) {
+		int difficultyScore = 1;
+		Iterator celleMap = cells.entrySet().iterator();
+		while (cellsMap.hasNext()) {
+			difficultiesScore *= cells.get(cellsMap.next()).getLstRemainingValidValues().size();
+		}
+		return difficultyScore;
+		
+		
+	}
 	private HashSet<Integer> getAllValidCellValues(int iCol, int iRow) {
 
 		HashSet<Integer> hsCellRange = new HashSet<Integer>();
